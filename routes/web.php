@@ -1,50 +1,64 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
+Route::get('/', function(){
     return view('home');
 })->name('home');
 
-Route::get('/katalog', function () {
+Route::get('/katalog', function(){
     return view('katalog');
 })->name('katalog');
 
-Route::get('/katalog/tovar_{id}', 'App\Http\Controllers\tovarLoadController@tovarLoad');
+Route::get('/about_company', function(){
+    return view('about_company');
+})->name('about_company');
 
-Route::get('/product_comparison', function(){
-    return view('product_comparison');
+Route::get('/contacts', function(){
+    return view('contacts');
+})->name('contacts');
+
+Route::get('/login', function(){
+    if(session('login')){
+        return redirect()->route('home');
+    }
+    return view('login');
+})->name('login');
+
+Route::post('/login', 'App\Http\Controllers\registerController@login_form');
+
+Route::get('/register', function(){
+    if(session('login')){
+        return redirect()->route('home');
+    }
+    return view('register');
+})->name('register');
+
+Route::post('/register', 'App\Http\Controllers\registerController@register_form');
+
+Route::post('/profile', 'App\Http\Controllers\profileController@profileLoad')->name('profile');
+
+Route::get('/katalog', 'App\Http\Controllers\katalogController@directory_call_go')->name('katalog');
+
+Route::get('/katalog/{type}', 'App\Http\Controllers\tovarsController@Unloading_go');
+
+Route::get('/katalog/tovars/{id}','App\Http\Controllers\tovarController@G_tovar');
+
+Route::get('/p_comparison', function(){
+    return view('p_comparison');
 })->name('p_comparison');
 
 Route::get('/favorites', function(){
     return view('favorites');
 })->name('favorites');
 
-Route::post('/basket', function () {
-    return view('basket');
-})->name('basket');
+Route::get('/buy_add/tovar/{id}','App\Http\Controllers\buyController@buy');
 
-Route::post('/login', function () {
-    return view('auth.login');
-})->name('login');
+Route::get('/remove','App\Http\Controllers\removeController@remove');
 
-Route::post('/register', function () {
-    return view('auth.register')->name('register');
-});
+Route::get('/remove/bascet', 'App\Http\Controllers\removeController@remove_bascet');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/zakaz','App\Http\Controllers\zakazController@zakaz');
 
-require __DIR__.'/auth.php';
+Route::get('/zakazs','App\Http\Controllers\zakazsController@load_zakazs')->name('zakazs');
