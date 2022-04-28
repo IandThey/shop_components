@@ -13,7 +13,7 @@
     <div class="modal-content rounded-5 shadow">
       <div class="modal-header p-5 pb-4 border-bottom-0">
         <h2 class="fw-bold mb-0">
-          Зарегистрироваться на сайте Сертекс ДВ
+          Зарегистрироваться
         </h2>
       </div>
       <div class="modal-body p-5 pt-0">

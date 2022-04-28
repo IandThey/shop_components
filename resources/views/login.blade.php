@@ -1,7 +1,7 @@
 @extends('SP.main_SP')
 
 @section('title')
-Сертекс ДВ || Авторизация
+  TQYES || Авторизация
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content rounded-5 shadow">
       <div class="modal-header p-5 pb-4 border-bottom-0">
-        <h2 class="fw-bold mb-0">Войти на сайт Low kik</h2>
+        <h2 class="fw-bold mb-0">Войти</h2>
       </div>
       <div class="modal-body p-5 pt-0">
         <form class="" method="POST">
@@ -21,13 +21,13 @@
         <div class="form-floating mb-3">
           <input type="text" name="login" class="form-control rounded-4" id="login-form-register" placeholder="login">
           <label for="floatingInput">
-            Login
+            Логин
           </label>
         </div>
         <div class="form-floating mb-3">
           <input type="password" name="password" class="form-control rounded-4" id="password-form-register" placeholder="Password">
           <label for="floatingPassword">
-            Password
+            Пароль
           </label>
         </div>
           <button class="w-100 mt-2 mb-2 btn btn-lg rounded-4 btn-primary" type="submit">Войти</button>

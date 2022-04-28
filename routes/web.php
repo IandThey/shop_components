@@ -37,7 +37,7 @@ Route::get('/register', function(){
 
 Route::post('/register', 'App\Http\Controllers\registerController@register_form');
 
-Route::post('/profile', 'App\Http\Controllers\profileController@profileLoad')->name('profile');
+Route::get('/profile', 'App\Http\Controllers\profileController@profileLoad')->name('profile');
 
 Route::get('/katalog', 'App\Http\Controllers\katalogController@directory_call_go')->name('katalog');
 

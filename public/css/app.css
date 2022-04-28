@@ -4,3 +4,13 @@ body{
 a{
     color: white;
 }
+.colas-block{
+    min-width: 460px;
+}
+.colas-block2{
+    min-width: 450px;
+}
+.rounded-my1{
+    border: 1px solid transparent;
+    border-radius: 1 0 1 0;
+}
