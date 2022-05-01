@@ -20,8 +20,7 @@
         @foreach ($tovar as $elem)
             @include('SP.G_tovars_SP',[
                 'name_tovar' => $elem['name_tovar'],
-                'a_tovar' => $elem['a_tovar'],
-                'img_tovar' => $elem['img_tovar'],
+                'id' => $elem['id'],
                 'price_tovar' => $elem['price_tovar'],
             ])
         @endforeach

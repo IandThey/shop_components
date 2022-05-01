@@ -10,7 +10,7 @@
     <div class="row">
         <hr>
             <div class="col-12 d-flex flex-wrap justify-content-center">
-                <h1>Грузоподъемное оборудование</h1>
+                <h1>Каталог комплектующих</h1>
             </div>
         <hr>
     </div>
@@ -19,9 +19,8 @@
         @foreach ($katalog as $elem)
             @include('SP.razdel_SP',[
                 'name_razdel' => $elem['name_razdel'],
+                'id' => $elem['id'],
                 'a_razdel' => $elem['a_razdel'],
-                'img_razdel' => $elem['img_razdel'],
-                'text_razdel' => $elem['text_razdel']
             ])
         @endforeach
     </div>

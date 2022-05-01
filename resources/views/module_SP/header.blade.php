@@ -21,13 +21,13 @@
               @endif
             </div>
           </div>
-          <div class="mt-3">
+          <div class="mt-4">
               <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="{{ route('home') }}" class="btn btn-light nav-link px-2 text-dark fw-bold headH">Главная</a></li>
-                <li><a href="{{ route('katalog') }}" class="btn btn-light nav-link px-2 rounded-0 text-dark fw-bold headH">Каталог</a></li>
-                <li><a href="{{ route('p_comparison') }}" class="btn btn-info nav-link rounded-0 px-2 text-dark fw-bold headH">Сравнение товаров</a></li>
-                <li><a href="{{ route('favorites') }}" class="btn btn-danger rounded-0 nav-link px-2 fw-bold text-dark headH">Избранное</a></li>
-                <li><a href="#" id='basket' class="btn-warning nav-link px-2 rounded-my1 text-dark fw-bold headH">Корзина</a></li>
+                <li><a href="{{ route('home') }}" class="btn-danger nav-link fw-bold text-dark">Главная</a></li>
+                <li><a href="{{ route('katalog') }}" class="btn-danger nav-link fw-bold text-dark">Каталог</a></li>
+                <li><a href="{{ route('p_comparison') }}" class="btn-danger nav-link fw-bold text-dark">Сравнение товаров</a></li>
+                <li><a href="{{ route('favorites') }}" class="btn-danger nav-link fw-bold text-dark">Избранное</a></li>
+                <li><a href="#" id='basket' class="btn-warning nav-link text-dark fw-bold">Корзина</a></li>
               </ul>
           </div>
         </div>

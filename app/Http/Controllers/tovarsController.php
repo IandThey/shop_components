@@ -12,8 +12,4 @@ class tovarsController extends Controller
         $tovar = tovars::where('type_tovar', $type)->get();
         return view ('tovar', ['tovar' => $tovar]);
     }
-    function Unloading_so($type){
-        $tovar = tovars::where('type_tovar', $type)->get();
-        return view ('tovar', ['tovar' => $tovar]);
-    }
 }
