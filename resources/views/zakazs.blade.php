@@ -10,13 +10,11 @@
 @endif
 <div class="cars-container">
   <div class="container-xxl" id="container-cars">
-    <div class="row">
-        <hr>
-            <div class="col-12 d-flex flex-wrap justify-content-center">
-                <h1>Заказы</h1>
-            </div>
-        <hr>
+    <br>
+    <div class="col-12 d-flex flex-wrap justify-content-center">
+        <h1>Заказы</h1>
     </div>
+    <hr>
     <div class="row w-100">
         <div class="col w-25">
             Заказчик
@@ -33,18 +31,17 @@
         <div class="col w-50">
             Дата и время
         </div>
-        <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 g-4 my-0 cars" id="cars">
-            @foreach ($zakazs as $elem)
-                @include('SP.zakaz_SP',[
-                    'login' => $elem['login'],
-                    'name' => $elem['name'],
-                    'price' => $elem['price'],
-                    'count' => $elem['count'],
-                    'time' => $elem['created_at']
-                ])
-            @endforeach
-        </div>
+        @foreach ($zakazs as $elem)
+            @include('SP.zakaz_SP',[
+                'login' => $elem['login'],
+                'name' => $elem['name'],
+                'price' => $elem['price'],
+                'count' => $elem['count'],
+                'time' => $elem['created_at']
+            ])
+        @endforeach
     </div>
   </div>
 </div>
+<br>
 @endsection
