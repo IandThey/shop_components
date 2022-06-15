@@ -7,17 +7,19 @@ Route::get('/', function(){
     return view('home');
 })->name('home');
 
+Route::get('/search','App\Http\Controllers\searchController@search')->name('search');
+
+Route::get('/', 'App\Http\Controllers\profileController@profileLoad')->name('home');
+
 Route::get('/katalog', function(){
     return view('katalog');
 })->name('katalog');
 
-Route::get('/about_company', function(){
-    return view('about_company');
-})->name('about_company');
+Route::get('/katalog', 'App\Http\Controllers\katalogController@directory_call_go')->name('katalog');
 
-Route::get('/contacts', function(){
-    return view('contacts');
-})->name('contacts');
+Route::get('/katalog/{type}', 'App\Http\Controllers\tovarsController@Unloading_go');
+
+Route::get('/katalog/tovars/{id}','App\Http\Controllers\tovarController@G_tovar');
 
 Route::get('/login', function(){
     if(session('login')){
@@ -37,21 +39,9 @@ Route::get('/register', function(){
 
 Route::post('/register', 'App\Http\Controllers\registerController@register_form');
 
-Route::get('/profile', 'App\Http\Controllers\profileController@profileLoad')->name('profile');
-
-Route::get('/katalog', 'App\Http\Controllers\katalogController@directory_call_go')->name('katalog');
-
-Route::get('/katalog/{type}', 'App\Http\Controllers\tovarsController@Unloading_go');
-
-Route::get('/katalog/tovars/{id}','App\Http\Controllers\tovarController@G_tovar');
-
-Route::get('/p_comparison', function(){
-    return view('p_comparison');
-})->name('p_comparison');
-
-Route::get('/favorites', function(){
-    return view('favorites');
-})->name('favorites');
+Route::get('/profile', function(){
+    return view('profile');
+})->name('profile');
 
 Route::get('/buy_add/tovar/{id}','App\Http\Controllers\buyController@buy');
 
@@ -62,3 +52,12 @@ Route::get('/remove/bascet', 'App\Http\Controllers\removeController@remove_basce
 Route::get('/zakaz','App\Http\Controllers\zakazController@zakaz');
 
 Route::get('/zakazs','App\Http\Controllers\zakazsController@load_zakazs')->name('zakazs');
+
+Route::get('/admin_panel', function(){
+    return view('admin_panel');
+})->name('admin_panel');
+
+Route::post('/admin_panel','App\Http\Controllers\adminController@add_tovar')->name('admin_panel');
+
+Route::post('/admin_panel/remove_tovar','App\Http\Controllers\removeController@remove_tovar')->name('remove_tovar');
+

@@ -4,7 +4,7 @@
         <div class="modal-content rounded-5 shadow">
             <div class="modal-header p-5 pb-4 border-bottom-0">
                 <h2 class="fw-bold mb-0">
-                    Корзина
+                    Избранное
                 </h2>
             </div>
             <div class="modal-body p-5 pt-0">
@@ -14,24 +14,11 @@
                             @foreach ($elem as $elem_dubl)
                                 @include('module_SP.basket_elem',[
                                     'name_tovar' => $elem_dubl['name_tovar'],
-                                    'price_tovar' => $elem_dubl['price_tovar']
+                                    'a_tovar' => $elem_dubl['a_tovar'],
                                 ])
                             @endforeach
                         @endforeach
-                        @if (!session('bascet'))
-                            <hr>
-                                <h2>
-                                    Корзина пуста
-                                </h2>
-                            <hr>
-                        @endif
                     </ul>
-                    <button type="submit" class="btn btn-lg btn-success mt-5 w-100" data-bs-dismiss="modal">
-                        Заказать
-                    </button>
-                    <a href="/remove/bascet" class="btn btn-danger mt-3">
-                        Очистить корзину
-                    </a>
                 </form>
             </div>
         </div>

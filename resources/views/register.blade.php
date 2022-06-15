@@ -1,14 +1,11 @@
 @extends('SP.main_SP')
 
 @section('title')
-    Сертекс ДВ || Регистрация
+  TQYES || Регистрация
 @endsection
 
 @section('content')
 <div class="modal modal-signin position-static d-block bg-secondary py-5" tabindex="-1" role="dialog" id="modalSignin">
-@if(session('alert')) 
-  @include('module_SP.alert')
-@endif
   <div class="modal-dialog" role="document">
     <div class="modal-content rounded-5 shadow">
       <div class="modal-header p-5 pb-4 border-bottom-0">
@@ -19,7 +16,6 @@
       <div class="modal-body p-5 pt-0">
         <form class="" method="POST">
         @csrf
-          
           <div class="form-floating mb-3">
             <input type="email" name="email" class="form-control rounded-4" id="Email-form-register" placeholder="Email">
             <label for="floatingInput">

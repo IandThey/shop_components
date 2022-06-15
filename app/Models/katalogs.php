@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class tovars extends Model
+class katalogs extends Model
 {
     use HasFactory;
 
@@ -13,9 +13,9 @@ class tovars extends Model
 
     ];
     
-    public function stocks(){
-        return $this->hasOne('App\stocks');
-    }
+    // public function tovars(){
+    //     return $this->hasMany('App\tovars');
+    // }
 
     public $timestamps = false;
 }

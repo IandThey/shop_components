@@ -4,9 +4,9 @@ body{
 a{
     color: white;
 }
-.colas-block{
-    min-width: 460px;
+#basket{
+    cursor: pointer;
 }
-.colas-block2{
-    min-width: 450px;
+.login-point{
+    cursor: pointer;
 }

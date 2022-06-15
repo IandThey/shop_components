@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Helper\Mod;
 use App\Models\tovars;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class profileController extends Controller
@@ -14,15 +13,14 @@ class profileController extends Controller
             $arr = session()->get('bascet');
             $tovars = array();
             if($arr == null){
-                return view('profile', ['tovars' => $tovars]);
+                return view('home', ['tovars' => $tovars]);
             }
             foreach($arr as $elem){
                 array_push($tovars, tovars::where('id',$elem)->get());
             }
-            return view('profile', ['tovars' => $tovars]);
+            return view('home', ['tovars' => $tovars]);
         }else{
-            Mod::session_message('Авторизуйтесь','warning');
-            return redirect()->route('home');
+            return view('home');
         }
     }
 }

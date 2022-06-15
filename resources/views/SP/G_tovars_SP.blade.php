@@ -7,7 +7,7 @@
         </h2>
         <a href="/katalog/tovars/{{ $id }}">
             <hr>
-            <img itemprop="image" src="/img/t{{ $id }}.jpg" style="max-width: 300px;" class="card-img-top" loading="lazy">
+            <img itemprop="image" src="/storage/img/{{ $a_img_tovar }}.jpg" width="300px" height="300px" class="card-img-top" loading="lazy">
             <hr>
         </a>
         <h3>

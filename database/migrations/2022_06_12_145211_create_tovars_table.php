@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('katalogs',function (Blueprint $table){
+        Schema::create('tovars', function (Blueprint $table) {
             $table->id();
-            $table->string('name_razdel');
-            $table->string('a_razdel');
-            $table->string('img_razdel');
+            $table->string('name_tovar');
+            $table->string('type_tovar');
+            $table->string('a_img_tovar');
+            $table->string('a_tovar');
+            $table->string('price_tovar');
         });
     }
 
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('katalogs');
+        Schema::dropIfExists('tovars');
     }
 };

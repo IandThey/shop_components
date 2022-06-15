@@ -5,17 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class tovars extends Model
+class favorites extends Model
 {
     use HasFactory;
 
     protected $guarded = [
 
     ];
-    
-    public function stocks(){
-        return $this->hasOne('App\stocks');
-    }
 
     public $timestamps = false;
 }

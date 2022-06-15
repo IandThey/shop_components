@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helper\Mod;
-use App\Models\User;
+use App\Models\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,7 +16,7 @@ class registerController extends Controller
         $password = $Received_data['password'];
         $passwordRepit = $Received_data['PasswordRepit'];
         if($login != '' && $password != '' && $passwordRepit != '' && $email != ''){
-            $chek_profile = User::where('login',$login)->exists();
+            $chek_profile = users::where('login',$login)->exists();
             if($password == $passwordRepit){
                 if($chek_profile == false){
                     if(preg_match('/[a-z]/i',$login)){
@@ -55,7 +55,7 @@ class registerController extends Controller
         $login = $data_rip['login'];
         $password = $data_rip['password'];
         if($login != '' && $password != ''){
-            $chek_profile = User::where('login',$login)->exists();
+            $chek_profile = users::where('login',$login)->exists();
                     if($chek_profile == false){
                         Mod::session_message('Такого пользователя нет','warning');
                         return redirect()->route('login');

@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('katalogs',function (Blueprint $table){
+        Schema::create('favorites', function (Blueprint $table) {
             $table->id();
-            $table->string('name_razdel');
-            $table->string('a_razdel');
-            $table->string('img_razdel');
+            // $table->integer('user_id')->unsigned()->default(1);
+            // $table->foreign('user_id')->references('id')->on('users');
+
+            // $table->integer('tovar_id')->unsigned()->default(1);
+            // $table->foreign('tovar_id')->references('id')->on('tovars');
         });
     }
 
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('katalogs');
+        Schema::dropIfExists('favorites');
     }
 };

@@ -4,13 +4,11 @@ body{
 a{
     color: white;
 }
-.colas-block{
-    min-width: 460px;
+@media only screen and (max-width: 1020){
+    .MC-block{
+        width: 1020px inherit;
+    }
 }
-.colas-block2{
-    min-width: 450px;
-}
-.rounded-my1{
-    border: 1px solid transparent;
-    opacity: 1 0 1 0;
+.foot-block-right{
+    max-width: 370px;
 }

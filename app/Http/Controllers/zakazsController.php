@@ -12,4 +12,11 @@ class zakazsController extends Controller
         $zakazs = checks::where('login', $login)->get();
         return view('zakazs',['zakazs' => $zakazs]);
     }
+    // function load_zakazs(){
+    //     $login = session()->get('login');
+    //     $user = User::where('login',$login)->get();
+    //     $zakazs = $user['id']->check;
+    //     $zakazs = checks::where('login', $login)->get();
+    //     return view('zakazs',['zakazs' => $zakazs]);
+    // }
 }

@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('katalogs',function (Blueprint $table){
-            $table->id();
-            $table->string('name_razdel');
-            $table->string('a_razdel');
-            $table->string('img_razdel');
+        Schema::table('favorites', function (Blueprint $table) {
+            $table->string('a_tovar');
+            $table->string('name_tovar');
+            $table->string('img_tovar');
         });
     }
 
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('katalogs');
+        //
     }
 };

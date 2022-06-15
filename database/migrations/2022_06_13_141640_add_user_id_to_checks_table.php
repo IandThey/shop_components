@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('katalogs',function (Blueprint $table){
-            $table->id();
-            $table->string('name_razdel');
-            $table->string('a_razdel');
-            $table->string('img_razdel');
+        Schema::table('checks', function (Blueprint $table) {
+            $table->foreignId('user_id')->references('id')->on('users');
         });
     }
 
@@ -28,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('katalogs');
+        Schema::table('checks', function (Blueprint $table) {
+            //
+        });
     }
 };

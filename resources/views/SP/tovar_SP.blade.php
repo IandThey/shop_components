@@ -2,9 +2,9 @@
 <hr>
 <div class="container mb-3">
     <div class="row">
-      <div class="col" style="max-width: 250px;">
+      <div class="col">
         <hr>
-        <img src="/img/t{{ $id }}.jpg" style="max-width: 300px;" class="img-fluid rounded-start" alt="...">
+        <img src="/storage/img/{{ $a_img_tovar }}.jpg" width="150px" height="150px" class="img-fluid rounded-start" alt="...">
         <hr>
       </div>
       <div class="col">

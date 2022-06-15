@@ -1,13 +1,10 @@
 @extends('SP.main_SP')
 
 @section('title')
-    Сертекс ДВ || Заказы
+    TQYES || Заказы
 @endsection
 
 @section('content')
-@if(session('alert')) 
-  @include('module_SP.alert')
-@endif
 <div class="cars-container">
   <div class="container-xxl" id="container-cars">
     <br>
@@ -15,21 +12,21 @@
         <h1>Заказы</h1>
     </div>
     <hr>
-    <div class="row w-100">
-        <div class="col w-25">
-            Заказчик
+    <div class="row w-100 m-0 p-0">
+        <div class="col d-flex justify-content-center p-0">
+            <p>Товар</p>
         </div>
-        <div class="col w-50">
-            Товар
+        <div class="col d-flex justify-content-center p-0">
+            <p>Цена</p>
         </div>
-        <div class="col w-50">
-            Цена
+        <div class="col d-flex justify-content-center p-0">
+            <p>Количество</p>
         </div>
-        <div class="col w-50">
-            Количество
+        <div class="col d-flex justify-content-center p-0">
+            <p>Дата и время</p>
         </div>
-        <div class="col w-50">
-            Дата и время
+        <div class="col d-flex justify-content-center p-0">
+            <p>Статус заказа</p>
         </div>
         @foreach ($zakazs as $elem)
             @include('SP.zakaz_SP',[
